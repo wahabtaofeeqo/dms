@@ -20,7 +20,7 @@ import models.User;
  *
  * @author user
  */
-public class BookingDao extends BaseDao {
+public class BookingDao extends DaoAdapter {
     
     public static boolean addBooking(int userId, int deskId, String date, String time) {
         

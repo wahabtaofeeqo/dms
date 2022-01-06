@@ -13,6 +13,7 @@ public class Desk {
     
     private int id;
     private String name;
+    private boolean booked;
     private boolean bookable;
 
     public int getId() {
@@ -38,4 +39,14 @@ public class Desk {
     public void setBookable(boolean bookable) {
         this.bookable = bookable;
     }
+
+    public boolean isBooked() {
+        return booked;
+    }
+
+    public void setBooked(boolean booked) {
+        this.booked = booked;
+    }
+    
+    
 }

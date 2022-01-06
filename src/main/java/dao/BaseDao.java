@@ -8,12 +8,13 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  *
  * @author user
  */
-public class BaseDao {
+public abstract class BaseDao {
     protected static Connection getConnection() {
         Connection con = null;
         
@@ -21,9 +22,15 @@ public class BaseDao {
             con = DriverManager.getConnection("jdbc:mysql://localhost:3306/dms", "root", "");
         }
         catch (SQLException ex) {
-            ex.printStackTrace();
+            System.err.println("No Connected to Database");
         }
         
         return con;
     }
+    
+    public abstract boolean insert(Object o);
+    public abstract Object find(int id);
+    public abstract boolean delete(int id);
+    public abstract List<Object> all();
+    public abstract boolean update(int id, Object o);
 }

@@ -1,4 +1,7 @@
 
+import utils.LoginScreen;
+
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -22,6 +25,7 @@ public class SplashScreen extends javax.swing.JFrame {
     
     public void init() {
         setLocationRelativeTo(null);
+        setVisible(true);
     }
 
     /**
@@ -103,10 +107,9 @@ public class SplashScreen extends javax.swing.JFrame {
                     }
                 }
                 
+                dispose();
                 LoginScreen ls = new LoginScreen();
                 ls.init();
-                
-                dispose();
             }
         }.start();
     }
@@ -142,7 +145,6 @@ public class SplashScreen extends javax.swing.JFrame {
             public void run() {
                 SplashScreen sc = new SplashScreen();
                 sc.init();
-                sc.setVisible(true);
                 sc.fill();
             }
         });

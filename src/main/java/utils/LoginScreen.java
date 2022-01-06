@@ -1,5 +1,6 @@
+package utils;
 
-import utils.Toast;
+
 import users.HomeSscreen;
 import admin.HomeScreen;
 import dao.UserDao;
@@ -126,7 +127,7 @@ public class LoginScreen extends javax.swing.JFrame {
             if(user.getPassword().equalsIgnoreCase(password)) {
                 if(user.getRole().equalsIgnoreCase("user")) {
                     HomeSscreen hs = new HomeSscreen();
-                hs.init(user);
+                    hs.init(user);
                 }
                 else {
                     admin.HomeScreen ah = new HomeScreen();
